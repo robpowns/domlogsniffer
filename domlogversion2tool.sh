@@ -1,5 +1,21 @@
 #!/bin/bash
 
+# ================================================
+#  Domlog Sniffer - A log analysis tool version 2 
+#  
+#  This script analyses Apache log files for a 
+#  specified domain and provides insights such as:
+#  - Top asset hits
+#  - Bot traffic detection
+#  - WordPress abuse detection
+#  - Top hits sorted by IP
+#  - User-Agent and Referrer analysis
+#  - 404, 500, 403, 503 error request analysis
+#  - Requests breakdown by hour
+#
+#  Created by: Robbie Powell
+# ================================================
+
 # Colour definitions for readability
 RED="\e[31m"
 GREEN="\e[32m"
@@ -26,7 +42,7 @@ fi
 
 echo -e "${CYAN}Earliest Log Entry:${RESET} $earliest_entry"
 
-# Requests breakdown by hour
+# Requests breakdown by hour sorts into highest to lowest 
 echo -e "\n${YELLOW}-----------------------------------${RESET}"
 echo -e "${CYAN}Requests Breakdown by Hour:${RESET}"
 echo -e "${YELLOW}-----------------------------------${RESET}"
@@ -54,7 +70,7 @@ else
     exit 1
 fi
 
-# Define the awk filter for time range
+# Define the awk filter for time range (needed for checking if time falls inside time in log) 
 awk_filter='$4 >= "["start && $4 <= "["end'
 
 # Function to print section headers
