@@ -1,20 +1,48 @@
 #!/bin/bash
 
-# ================================================
-#  Domlog Sniffer - A log analysis tool version 2 
-#  
-#  This script analyses Apache log files for a 
-#  specified domain and provides insights such as:
-#  - Top asset hits
-#  - Bot traffic detection
-#  - WordPress abuse detection
-#  - Top hits sorted by IP
-#  - User-Agent and Referrer analysis
-#  - 404, 500, 403, 503 error request analysis
-#  - Requests breakdown by hour
-#
-#  Created by: Robbie Powell
-# ================================================
+# Robbie Powell's Domlog Sniffer
+# Version: 2.0
+# Description: A script to analyse Apache domlogs for traffic patterns, bot detection, and abuse.
+# Author: Robbie Powell
+
+VERSION="2.0"
+
+# Function to display the help message
+show_help() {
+    echo "============================================="
+    echo "             Domlog Sniffer"
+    echo "============================================="
+    echo "Author: Robbie Powell"
+    echo "Version: $VERSION"
+    echo
+    echo "Description:"
+    echo "  This script analyses Apache domlogs for various traffic patterns, including:"
+    echo "  - Top asset hits"
+    echo "  - Bot traffic"
+    echo "  - WordPress abuse indicators"
+    echo "  - Request breakdowns by IP and User-Agent"
+    echo
+    echo "Usage:"
+    echo "  ./domlog_sniffer.sh [OPTIONS]"
+    echo
+    echo "Options:"
+    echo "  -v, --version     Show the script version and exit."
+    echo "  -h, --help        Show this help message and exit."
+    echo
+    echo "Example:"
+    echo "  ./domlog_sniffer.sh"
+    echo
+}
+
+# Check for flags
+if [[ "$1" == "-v" || "$1" == "--version" ]]; then
+    echo "Domlog Sniffer by Robbie Powell, Version: $VERSION"
+    exit 0
+elif [[ "$1" == "-h" || "$1" == "--help" ]]; then
+    show_help
+    exit 0
+fi
+
 
 # Colour definitions for readability
 RED="\e[31m"
