@@ -1,5 +1,19 @@
 #!/bin/bash
 
+# Domlog Sniffer
+# Version: 1.0
+# Description: A script to analyse Apache domlogs for traffic patterns, bot detection, and abuse.
+# Author: Robbie Powell
+
+VERSION="1.0"
+
+# Check for -v or --version flag
+if [[ "$1" == "-v" || "$1" == "--version" ]]; then
+    echo "Domlog Sniffer by Robbie Powell, Version: $VERSION"
+    exit 0
+fi
+
+
 clear
 
 echo "============================================="
