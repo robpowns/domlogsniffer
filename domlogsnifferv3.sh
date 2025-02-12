@@ -55,7 +55,7 @@ RESET="\e[0m"
 
 clear
 
-# Impressive Title Section
+# Sweet Title Section
 echo -e "${BLUE}${BOLD}"
 echo "  DDDD    OOO   M   M  L        OOO   GGGG     SSSS  N   N  III FFFFF  FFFFF  EEEEE  RRRRR"
 echo "  D   D  O   O  MM MM  L       O   O  G        S     NN  N   I  F      F      E      R   R"
