@@ -133,9 +133,9 @@ print_section "Checking for Bot Traffic" \
 print_section "Checking for WordPress Abuse" \
     "awk -v start=\"$start_time\" -v end=\"$end_time\" '$awk_filter' /usr/local/apache/domlogs/$domain | grep -Ei \"(wp-login.php|xmlrpc.php|wp-admin)\" | awk '{print \$1, \$6, \$7}' | sort | uniq -c | sort -nr"
 
-# Top Hits by IP Address
-print_header "Top Hits Sorted by IP Address"
-awk -v start="$start_time" -v end="$end_time" '$4 >= "["start && $4 <= "["end' /usr/local/apache/domlogs/$domain | awk '{print $1}' | sort | uniq -c | sort -nr | while read -r count ip; do
+# Top 20 Hits by IP Address
+print_header "Top 20 Hits Sorted by IP Address"
+awk -v start="$start_time" -v end="$end_time" '$4 >= "["start && $4 <= "["end' /usr/local/apache/domlogs/$domain | awk '{print $1}' | sort | uniq -c | sort -nr | head -20 | while read -r count ip; do
     country=$(geoiplookup "$ip" | awk -F ": " '{print $2}')
     printf "%7s %15s %s\n" "$count" "$ip" "$country"
 done
