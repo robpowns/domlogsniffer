@@ -171,7 +171,7 @@ print_section "Top Asset Hits" \
 
 # Bot Traffic (Top 30)
 print_section "Checking for Bot Traffic" \
-    "awk -v start=\"$start_time\" -v end=\"$end_time\" '$awk_filter' \"$temp_log\" | grep -Ei \"(bot|crawler|spider|googlebot|bingbot|yandexbot)\" | awk '{print \$1, \$6, \$7}' | sort | uniq -c | sort -nr | head -30"
+    "awk -v start=\"$start_time\" -v end=\"$end_time\" '$awk_filter' \"$temp_log\" | grep -Ei \"(bot|crawler|spider|googlebot|bingbot|yandexbot)\" | awk '{print \$1, \$6, \$7, \$NF}' | sort | uniq -c | sort -nr | head -30"
 
 # WordPress Abuse (Top 30)
 print_section "Checking for WordPress Abuse" \
