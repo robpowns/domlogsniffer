@@ -57,11 +57,11 @@ clear
 
 # Sweet Title Section
 echo -e "${BLUE}${BOLD}"
-echo "  DDDD    OOO   M   M  L        OOO   GGGG     SSSS  N   N  III FFFFF  FFFFF  EEEEE  RRRRR"
-echo "  D   D  O   O  MM MM  L       O   O  G        S     NN  N   I  F      F      E      R   R"
-echo "  D   D  O   O  M M M  L       O   O  G  GG     SSS  N N N   I  FFFF   FFFF   EEEE   RRRRR"
-echo "  D   D  O   O  M   M  L       O   O  G   G       S  N  NN   I  F      F      E      R  R"
-echo "  DDDD    OOO   M   M  LLLLL    OOO   GGGGG    SSSS  N   N  III F      F      EEEEE  R   R"
+echo "  DDDD    OOO   M   M  L      OOO   GGGG     SSSS  N   N  III FFFFF  FFFFF  EEEEE  RRRRR"
+echo "  D   D  O   O  MM MM  L     O   O  G        S     NN  N   I  F      F      E      R   R"
+echo "  D   D  O   O  M M M  L     O   O  G  GG     SSS  N N N   I  FFFF   FFFF   EEEE   RRRRR"
+echo "  D   D  O   O  M   M  L     O   O  G   G       S  N  NN   I  F      F      E      R  R"
+echo "  DDDD    OOO   M   M  LLLLL  OOO   GGGGG    SSSS  N   N  III F      F      EEEEE  R   R"
 echo -e "${RESET}"
 echo -e "${GREEN}${BOLD}=============================================${RESET}"
 echo -e "${CYAN}${BOLD}             Domlog Sniffer v$VERSION${RESET}"
@@ -117,7 +117,7 @@ echo -e "${MAGENTA}${BOLD}Earliest Log Entry:${RESET} $earliest_entry"
 echo -e "\n${YELLOW}${BOLD}-----------------------------------${RESET}"
 echo -e "${CYAN}${BOLD}Requests Breakdown by Hour:${RESET}"
 echo -e "${YELLOW}${BOLD}-----------------------------------${RESET}"
-awk '{print substr($4, 2, 14)}' "$temp_log" 2>/dev/null | awk -F':' '{print $1":"$2":00"}' | sort | uniq -c | sort -nr | column -t
+awk '{print substr($4, 2, 14)}' "$temp_log" 2>/dev/null | awk -F':' '{print $1":"$2":00"}' | sort | uniq -c | column -t
 
 # Timeframe selection
 echo -e "\n${YELLOW}${BOLD}-----------------------------------${RESET}"
