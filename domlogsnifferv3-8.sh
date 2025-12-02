@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Robbie Powell's Domlog Sniffer
-# Version: 3.3 (In-memory + cleaned UI + regex fix)
+# Version: 3.8 (In-memory + cleaned UI + regex fix)
 # Description: A script to analyse Apache domlogs for traffic patterns, bot detection, and abuse.
 # Author: Robbie Powell
 
