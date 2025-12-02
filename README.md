@@ -49,5 +49,13 @@ The script performs various analyses on the log data, including:
 Output: 
 Results are displayed in a structured format with colour-coded headers for readability.
 
+Version 3.8 updates 
+
+Now writes logs to memory 
+cleaned up header
+cleaned up bot section output
+Requests Breakdown by Hour now sorted by hour 
+
+
 
 
